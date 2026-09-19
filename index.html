@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetical & Number Sorter - Pengurut Daftar Item</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>List & Name Sorter</h1>
+            <p>Urutkan daftar teks, nama, atau angka secara otomatis dari A-Z, Z-A, atau secara acak (shuffle).</p>
+        </header>
+
+        <div class="sorter-card">
+            <!-- Area Input Daftar Item -->
+            <div class="input-group">
+                <label for="textInput">Masukkan Daftar Item (Pisahkan dengan Baris Baru / Enter):</label>
+                <textarea id="textInput" placeholder="Contoh:&#10;Budi&#10;Andi&#10;Citra&#10;10&#10;2"></textarea>
+            </div>
+
+            <!-- Opsi Pengurutan -->
+            <div class="options-section">
+                <h3>Aksi Pengurutan:</h3>
+                <div class="button-grid">
+                    <button class="btn btn-action" data-sort="asc">A ➔ Z / Terkecil</button>
+                    <button class="btn btn-action" data-sort="desc">Z ➔ A / Terbesar</button>
+                    <button class="btn btn-action" data-sort="length">Panjang Karakter</button>
+                    <button class="btn btn-action" data-sort="shuffle">Acak (Shuffle)</button>
+                </div>
+
+                <div class="options-checkboxes">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="optRemoveDuplicates" checked>
+                        Hapus Duplikat (Item Ganda)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="optNaturalSort" checked>
+                        Pengurutan Angka Alami (Natural Sort)
+                    </label>
+                </div>
+            </div>
+
+            <!-- Tombol Pengelola -->
+            <div class="control-buttons">
+                <button id="btnCopy" class="btn btn-secondary">Salin Hasil</button>
+                <button id="btnClear" class="btn btn-danger">Hapus Semua</button>
+            </div>
+
+            <!-- Ringkasan Statistik Item -->
+            <div class="stats-bar">
+                <span>Total Baris: <strong id="totalLines">0</strong></span>
+                <span>Baris Unik: <strong id="uniqueLines">0</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
